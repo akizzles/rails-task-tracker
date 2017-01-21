@@ -1,8 +1,10 @@
 <section class="todoapp">
-
   <header class="header">
     <h1>To Do Lists</h1>
-    <input class="new-todo" placeholder="Make a New List" autofocus="">
+      <%= form_for(@list) do |f| %>
+        <%= f.text_field :name, class: "new-todo", autofocus: true, placeholder: "Make a new list..."%></br>
+        <%= f.submit :style => "display: none" %>
+      <% end %>
   </header>
 
   <section class="main">
