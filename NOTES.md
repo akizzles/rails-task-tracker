@@ -54,9 +54,21 @@ Step 3: Add items to a list
 
 
 
-CREATE ACTION for an ITEM in a LISt
-  - what is the URL / HTTP method for that?
+CREATE ACTION for an ITEM in a LIST - what is the URL / HTTP method for that?
 
+  - The form is already present in the list show page.
+  - What URL does this form imply?
+
+  POST '/items' #=> Doesn't describe which list we are adding an item too?
+
+  An item doesn't exist in our application outside of the context of the list it belongs to
+
+  So insteaad, we want a nested resource - items are nested in terms of URLs under their parent list:
+
+  POST '/lists/:id/items' #=> see explanation here: https://youtu.be/OsinhhQLmRk?t=21m9s 
+
+  when creating forms for nested resources, can pass in an array, where the first element is the parent object.
+  E.g.) form_for([@list, @item]) #=> rails knows to pass in 'list_items_path(@list)'
 
 Does it impact the DB?
   - probably need an items table associated with a list.
@@ -64,6 +76,10 @@ Does it impact the DB?
 Does it impact my URLs? '/lists/1'
 
 
+Step 4: Adding validations 
+
+Validate that lists have name
+Validate that items have a description
 
 
 *********************************************************
