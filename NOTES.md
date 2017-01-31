@@ -81,6 +81,26 @@ Step 4: Adding validations
 Validate that lists have name
 Validate that items have a description
 
+Step 5: I want to add state/progress (complete, incomplete) to Items in a List
+  - marking items as complete or incomplete
+
+  What URLs do I need and how might my DB change?
+  - the idea of an item being completed or incomplete require data
+  - new forms for updating the status of an item - which mean new URL
+
+  /lists/:list_id/items => PUT/PATCH /lists/:list_id/items/:id
+
+  add this to view:
+  <input class="toggle" type="checkbox">
+
+  I need that JS function to submit the form when the checkbox is clicked
+
+  # REFACTOR 1: Start using partials in lists/show
+
+Step 6: Deleting Items from a List
+
+Step 7: Fix Down Arrow on Make a List form
+
 
 *********************************************************
 

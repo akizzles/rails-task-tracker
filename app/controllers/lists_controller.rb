@@ -11,7 +11,7 @@ class ListsController < ApplicationController
     # load lists
     # params will have all the data passed by a user
     @list = List.find(params[:id])
-    @item = @list.items.build
+    @item = Item.new
   end
 
   def create
