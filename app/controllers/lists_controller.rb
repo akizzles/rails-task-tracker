@@ -1,6 +1,8 @@
 class ListsController < ApplicationController
+  # before_action :authentication_required
 
   def index
+    # if you're not logged in, you can't see this, in fact, go back to the log in page
     @list = List.new
     @lists = List.all
     # raise @lists.inspect # was the controller able to get the lists from the DB

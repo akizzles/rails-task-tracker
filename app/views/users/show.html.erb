@@ -1,0 +1,10 @@
+<% provide(:title, @user.name) %>
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
+
+<footer>
+  <p><label>email:</label> <%= @user.email %> <%= link_to "update", edit_user_path(@user) %></p>
+  <p><%= Time.now %></p>
+</footer>

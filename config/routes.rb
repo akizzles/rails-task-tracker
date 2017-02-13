@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  get 'items/create'
-
+  # get '/signup' => 'users#new'
+  # post '/sessions' => 'sessions#create'
+  # get '/logout' => 'sessions#destroy'
+  
+  resources :users
+  
   resources :lists do
     resources :items
   end

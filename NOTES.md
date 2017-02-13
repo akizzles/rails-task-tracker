@@ -99,8 +99,37 @@ Step 5: I want to add state/progress (complete, incomplete) to Items in a List
 
 Step 6: Deleting Items from a List
 
-Step 7: Fix Down Arrow on Make a List form
+needs a button or link for the delete action
+needs to hit some sort of URL
+- RESTful conventions
+  - How do I trigger the delete request? * method override hack provided by rack
+  - browsers only support GET and POST
+  - a controller action to process the deletion action
 
+Step 7: User Signup and Login
+
+Authentication
+  - new model for user with email
+
+what URLs do I need
+  get /users/new UsersController#new
+    - form
+  post /users UsersController#create
+    - create the user in the db.
+
+  GET login
+    - form
+  post /sessions
+    - "log the user in" - whatever that means
+
+Step 8: User have lists and can only see their lists.*
+
+
+FormHelper -> smart forms
+FormTagHelper -> stupid forms
+HTTP is a stateless protocol which means every request is independent, no memory between requests
+
+Step ... TASK ASSIGNMENTS TO USER(S)
 
 *********************************************************
 
