@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  # get '/signup' => 'users#new'
-  # post '/sessions' => 'sessions#create'
-  # get '/logout' => 'sessions#destroy'
+  get '/signup', to: 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
   
-  resources :users
+  resources :users, except: :new
   
   resources :lists do
     resources :items
