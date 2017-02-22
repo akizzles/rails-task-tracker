@@ -1,14 +1,19 @@
 class SessionsController < ApplicationController
   def new # login page in views/sessions/new
+
   end
 
   def create
-    @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect_to user_path(@user), message: "Welcome to Task Tracker. Please log in!"
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      log_in user
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+      redirect_back_or user
+      #flash[:success] = 'Welcome to Task Tracker! You are now logged in.'
+      #redirect_to root_path 
     else
-      render 'sessions/new'
+      flash[:danger] = 'Invalid email/password combination'
+      render 'new'
     end
   end
 

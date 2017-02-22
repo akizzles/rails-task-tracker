@@ -2,15 +2,18 @@
   <header class="header">
     <h1>New User Registration!</h1>
     <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
       <%= f.text_field :name, class: "new-todo", placeholder: "Name" %>
-      <%= f.text_field :email, class: "new-todo", placeholder: "Login Email" %>
-      <%= f.password_field :password, class: "new-todo", placeholder: "Choose a password" %>
-      <%= f.submit %>
+      <%= f.email_field :email, class: "new-todo", placeholder: "Login Email" %>
+      <%= f.password_field :password, class: "new-todo", placeholder: "Choose your new password" %>
+      <%= f.password_field :password_confirmation, class: "new-todo", placeholder: "Re-type your password" %>
+      <%= f.submit "Create my account", class: "hidden" %>
       <% end %>
 
   </header>
 
   <footer class="footer">
+
   </footer>
 
 </section>

@@ -1,16 +1,17 @@
 <section class="todoapp">
   <header class="header">
     <h1>Login!</h1>
-    <%= form_tag(login_path) do %>
-      <%= text_field_tag :email, nil, class: 'new-todo', placeholder: 'Login with your email' %>
-      <%= password_field_tag :password, nil, class: 'new-todo', placeholder: 'Enter your password'  %>
-      <%= submit_tag 'login'%>
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.email_field :email, class: 'new-todo', placeholder: 'Login with your email' %>
+      <%= f.password_field :password, class: 'new-todo', placeholder: 'Enter your password'  %>
+      <%= f.submit 'login', class: 'hidden' %>
       
     <% end %>
 
   </header>
 
   <footer class="footer">
+    New user? <%= link_to "Sign up now!", signup_path %>
   </footer>
 
 </section>
