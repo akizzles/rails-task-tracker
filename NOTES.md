@@ -131,6 +131,34 @@ HTTP is a stateless protocol which means every request is independent, no memory
 
 Step ... TASK ASSIGNMENTS TO USER(S)
 
+I need to be able to find assigned items of a user
+
+USER
+id
+name
+email
+password
+
+LIST
+id
+name
+
+
+ITEM
+id
+descr
+status
+due_date
+
+
+ASSIGNMENT
+id
+
+
+user -> lists √ -> items √ -> assignments √
+
+
+
 *********************************************************
 
   through the todomvc lecture video series:

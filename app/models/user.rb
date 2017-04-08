@@ -10,7 +10,6 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, length: {minimum: 6}
   has_many :lists
   has_many :items, through: :lists
-  has_many :items, through: :assignments
-  has_many :assignments
+  has_many :assignments, through: :items
 
 end
