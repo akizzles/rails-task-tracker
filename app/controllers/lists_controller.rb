@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  # before_action :authentication_required
+  before_action :authentication_required
 
   def index
     # if you're not logged in, you can't see this, in fact, go back to the log in page
